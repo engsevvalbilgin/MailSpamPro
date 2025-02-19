@@ -1,12 +1,10 @@
 import pandas as pd
-import re
-import nltk
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score
-import torch as t
+
 
 
 
@@ -54,8 +52,8 @@ y_pred = model.predict(X_test)
 print("Accuracy Score:", accuracy_score(y_test, y_pred))
 
 
-# 6. Örnek Mesajı Test Etme
-ornek_mesaj = ["Congragulations! You won money!"]
+# 6. Testing examples
+ornek_mesaj = ["BIG DISCOUNT"]
 ornek_mesaj_v = vectorizer.transform(ornek_mesaj)
 tahmin = model.predict(ornek_mesaj_v)
 print("Prediction:", "Spam" if tahmin[0] else "Ham")
